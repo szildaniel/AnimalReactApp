@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 html {
+  font-family: "Lato", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -33,6 +35,12 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.wrapper.gray {
+  -webkit-filter: grayscale(0.8) blur(4px);
+          filter: grayscale(0.8) blur(4px);
+  z-index: 9;
 }
 
 .container {
@@ -74,18 +82,81 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-shadow: 1px 1px 3px black;
 }
 
 .tile.tileButterfly {
   background-image: url("/images/butterfly.jpg");
+  color: black;
+  text-shadow: 1px 1px 3px white;
+}
+
+.tile.tileButterfly button {
+  background: #7a00f4;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+.tile.tileButterfly button:hover {
+  background: transparent;
+  color: black;
+  text-shadow: 1px 1px 3px white;
 }
 
 .tile.tileFrog {
   background-image: url("/images/frog.jpg");
 }
 
+.tile.tileFrog button {
+  background: yellow;
+  color: black;
+  text-shadow: 1px 1px 3px white;
+}
+
+.tile.tileFrog button:hover {
+  background: transparent;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
 .tile.tileBat {
   background-image: url("/images/bat.jpg");
+}
+
+.tile.tileBat button {
+  background: #a21108;
+}
+
+.tile.tileBat button:hover {
+  background: transparent;
+}
+
+.tile.titleLadybug {
+  background-image: url("/images/ladybug.jpg");
+}
+
+.tile.titleLadybug button {
+  background: #568b8f;
+}
+
+.tile.titleLadybug button:hover {
+  background: transparent;
+}
+
+.tile.titleBee {
+  background-image: url("/images/bee.jpg");
+}
+
+.tile.titleBee button {
+  background: #f3d89d;
+  color: black;
+  text-shadow: 1px 1px 3px white;
+}
+
+.tile.titleBee button:hover {
+  background: transparent;
+  color: white;
+  text-shadow: 1px 1px 3px black;
 }
 
 .tile.open {
@@ -116,22 +187,199 @@ h1 {
           align-items: center;
 }
 
-.btnLifeCycle {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-  width: 100px;
-  height: 50px;
-  background: transparent;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  border: 2px solid black;
-  border-radius: 5%;
-  margin-bottom: 2rem;
+.tile > *:first-child {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
-.btnLifeCycle:hover {
+.tile > *:last-child {
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+}
+
+.open-active > *:first-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.open-active > *:last-child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.btnLifeCycle, .btnStart {
+  width: 165px;
+  height: 35px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 1px 1px 4px black;
+          box-shadow: 1px 1px 4px black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  font-size: 18px;
+  text-shadow: 1px 1px 3px black;
   cursor: pointer;
+}
+
+.btnLifeCycle:focus, .btnStart:focus {
+  outline: none;
+}
+
+.btnLifeCycle:hover, .btnStart:hover {
+  background: transparent;
+}
+
+.btnLifeCycle.welcome-btn, .welcome-btn.btnStart {
+  background: transparent;
+}
+
+.btnLifeCycle.welcome-btn:hover, .welcome-btn.btnStart:hover {
+  background: #12424a;
+}
+
+.welcome {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #4e8f0e;
+}
+
+.welcome .info {
+  width: 600px;
+  height: 300px;
+  -webkit-box-shadow: 1px 1px 4px black;
+          box-shadow: 1px 1px 4px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.welcome .info h1,
+.welcome .info h2 {
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+.welcome-container {
+  background: url("/images/welcome-bg.jpg") center;
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+}
+
+.speech {
+  position: relative;
+  top: 20%;
+  left: 40%;
+  margin: 0;
+  width: 210px;
+  height: 100px;
+  background: white;
+  border: 8px solid yellow;
+  border-radius: 30px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 4px #888;
+          box-shadow: 2px 2px 4px #888;
+  color: black;
+  text-shadow: 1px 1px 3px lightgray;
+  font-size: 1.48rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.speech:before {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  top: 100px;
+  border: 25px solid;
+  border-color: yellow transparent transparent yellow;
+}
+
+.speech:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 38px;
+  top: 100px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+}
+
+.speech.top-right {
+  position: relative;
+  top: 42%;
+  left: 44%;
+  width: 280px;
+  height: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 1.3rem;
+}
+
+.speech.top-right:before {
+  top: 0;
+  bottom: 200px;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.speech.top-right:after {
+  top: 0;
+  bottom: 200px;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.btnStart {
+  color: black;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #7698ef;
+  color: black;
+  text-shadow: none;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+}
+
+.btnStart:hover {
+  background: transparent;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,8 @@
 @import "mixins";
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 html {
+  font-family: "Lato", sans-serif;
   box-sizing: border-box;
 }
 
@@ -22,6 +24,10 @@ h1 {
 .wrapper {
   @include center;
   flex-direction: column;
+  &.gray {
+    filter: grayscale(0.8) blur(4px);
+    z-index: 9;
+  }
 }
 
 .container {
@@ -33,7 +39,7 @@ h1 {
 
 .tile {
   background: rgb(105, 174, 219);
-  box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
   color: white;
   text-align: center;
   align-items: center;
@@ -47,16 +53,67 @@ h1 {
   align-items: center;
   display: flex;
   flex-direction: column;
+  text-shadow: 1px 1px 3px black;
   &.tileButterfly {
     background-image: url("/images/butterfly.jpg");
+    color: black;
+    text-shadow: 1px 1px 3px white;
+    button {
+      background: #7a00f4;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      &:hover {
+        background: transparent;
+        color: black;
+        text-shadow: 1px 1px 3px white;
+      }
+    }
   }
   &.tileFrog {
     background-image: url("/images/frog.jpg");
+    button {
+      background: yellow;
+      color: black;
+      text-shadow: 1px 1px 3px white;
+      &:hover {
+        background: transparent;
+        color: white;
+        text-shadow: 1px 1px 3px black;
+      }
+    }
   }
   &.tileBat {
     background-image: url("/images/bat.jpg");
+    button {
+      background: #a21108;
+      &:hover {
+        background: transparent;
+      }
+    }
   }
-  &.open{
+  &.titleLadybug {
+    background-image: url("/images/ladybug.jpg");
+    button {
+      background: #568b8f;
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+  &.titleBee {
+    background-image: url("/images/bee.jpg");
+    button {
+      background: #f3d89d;
+      color: black;
+      text-shadow: 1px 1px 3px white;
+      &:hover {
+        background: transparent;
+        color: white;
+        text-shadow: 1px 1px 3px black;
+      }
+    }
+  }
+  &.open {
     font-size: 40px;
     flex: 5;
   }
@@ -70,27 +127,154 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  // &:first-child{transform: translateY(-100%)};
-  // &:last-child{transform: translateY(100%)};
-  // &.open-active > *:first-child{transform: translateY(0);}
-  // &.open-active > *:last-child{transform: translateY(0);}
-
-}
-
-.btnLifeCycle{
-  flex: 0 1 auto;
-  width: 100px;
-  height:50px;
-  background:transparent;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  border: 2px solid black;
-  border-radius: 5%;
-  margin-bottom: 2rem;
-  &:hover{
-    cursor: pointer;
-
+  &:first-child {
+    transform: translateY(-100%);
+  }
+  &:last-child {
+    transform: translateY(200%);
   }
 }
 
+.open-active > *:first-child {
+  transform: translateY(0);
+}
+.open-active > *:last-child {
+  transform: translateY(0);
+}
+
+.btnLifeCycle {
+  width: 165px;
+  height: 35px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 1px 1px 4px black;
+  transition: 0.5s;
+  outline: none;
+  font-size: 18px;
+  text-shadow: 1px 1px 3px black;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: transparent;
+  }
+  &.welcome-btn {
+    background: transparent;
+    &:hover {
+      background: #12424a;
+    }
+  }
+}
+
+.welcome {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  // background: #164c55;
+  background: #4e8f0e;
+  .info {
+    width: 600px;
+    height: 300px;
+    box-shadow: 1px 1px 4px black;
+    @include center;
+    flex-direction: column;
+    h1,
+    h2 {
+      color: white;
+      text-shadow: 1px 1px 3px black;
+    }
+  }
+}
+
+.welcome-container {
+  background: url("/images/welcome-bg.jpg") center;
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+}
+
+.speech {
+  position: relative;
+  top: 20%;
+  left: 40%;
+  margin: 0;
+  width: 210px;
+  height: 100px;
+  background: white;
+  border: 8px solid yellow;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 2px 2px 4px #888;
+  color: black;
+  text-shadow: 1px 1px 3px lightgray;
+  font-size: 1.48rem;
+  @include center;
+  box-sizing: content-box;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    top: 100px;
+    border: 25px solid;
+    border-color: yellow transparent transparent yellow;
+  }
+  &:after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 38px;
+    top: 100px;
+    border: 15px solid;
+    border-color: #fff transparent transparent #fff;
+  }
+  &.top-right {
+    position: relative;
+    top: 42%;
+    left: 44%;
+    width: 280px;
+    height: 200px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    &:before {
+      top: 0;
+      bottom: 200px;
+      // left: 158px;
+      transform: rotateX(180deg);
+    }
+    &:after {
+      top: 0;
+      bottom: 200px;
+      // left: 158px;
+      // right: 50px;
+      transform: rotateX(180deg);
+    }
+  }
+}
+
+.btnStart {
+  @extend .btnLifeCycle;
+  color: black;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  background: #7698ef;
+  color: black;
+  text-shadow: none;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  &:hover{
+    background:transparent;
+  }
+}

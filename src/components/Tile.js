@@ -1,39 +1,45 @@
 import React from "react";
 import Button from "./Button";
+import { randomAdj, adjectives } from "../helper";
 
 class Tile extends React.Component {
-    state = {
-        isActive: false,
-        showButton: false,
-      };
-
-
-  clickHandler = () => {
+  state = {
+    isActive: false,
+    isOpenActive: false
+  };
+ 
+  toggleActive = () => {
     const currentState = this.state.isActive;
     this.setState({ isActive: !currentState });
+    // console.log(currentState);
   };
 
-  toggleOpenActive = (event) => {
-    console.log(event);
-    const theState = this.state.showButton;
-    this.setState({ showButton: !theState})
-    console.log('transitionEnd')
-  }
+  toggleOpenActive = event => {
+    // I have two transition font-size and flex-grow, when both
+    //  of them fires up, state is changing twice, so i decide to choose one
+    if (event.propertyName === "flex-grow") {
+      const currentState = this.state.isOpenActive;
+      this.setState({ isOpenActive: !currentState });
+    }
+  };
   render() {
     return (
       <div
         onTransitionEnd={this.toggleOpenActive}
-        onClick={this.clickHandler}
-
-         className={
-          this.state.isActive
+        onClick={this.toggleActive}
+        className={
+          this.state.isActive && !this.state.isOpenActive
             ? `tile open ${this.props.uClass}`
-            : `tile ${this.props.uClass}`}
-    
-      > 
-        <p>That is</p>
+            : this.state.isActive && this.state.isOpenActive
+            ? `tile open open-active ${this.props.uClass}`
+            : `tile ${this.props.uClass}`
+        }
+      >
+        <p> {randomAdj(adjectives)} </p>
         <p>{this.props.name}</p>
-        <Button />
+        <p>
+          <Button name={this.props.name} goTo={this.props.goTo}/>
+        </p>
       </div>
     );
   }
