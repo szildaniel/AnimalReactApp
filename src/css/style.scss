@@ -169,27 +169,6 @@ h1 {
   }
 }
 
-.welcome {
-  z-index: 10;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  // background: #164c55;
-  background: #4e8f0e;
-  .info {
-    width: 600px;
-    height: 300px;
-    box-shadow: 1px 1px 4px black;
-    @include center;
-    flex-direction: column;
-    h1,
-    h2 {
-      color: white;
-      text-shadow: 1px 1px 3px black;
-    }
-  }
-}
 
 .welcome-container {
   background: url("/images/welcome-bg.jpg") center;
@@ -269,7 +248,7 @@ h1 {
   bottom: 10%;
   transform: translateX(-50%);
   background: #7698ef;
-  color: black;
+  color: white;
   text-shadow: none;
   width: auto;
   height: auto;

@@ -3,8 +3,9 @@ import React from "react";
 class Button extends React.Component {
   openLifecycle = () => {
     const animalName = this.props.name;
-    console.log(animalName);
-    this.props.goTo(animalName);
+    const animals = this.props.animals;
+
+    this.props.goTo(animalName, animals);
   } 
   render() {
     return (

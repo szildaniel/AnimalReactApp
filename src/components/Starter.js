@@ -14,7 +14,7 @@ class Starter extends React.Component {
           Want to see how beautiful Nature made me? Click Start App and choose
           me or one of my collegue and discover our life cycle from begining.
         </p>
-        <button className="btnStart">Start App</button>
+        <button onClick={this.startApp} className="btnStart">Start App</button>
       </div>
     );
   }
