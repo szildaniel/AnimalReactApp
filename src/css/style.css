@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 html {
   font-family: "Lato", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 *,
@@ -240,42 +238,6 @@ h1 {
   background: #12424a;
 }
 
-.welcome {
-  z-index: 10;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: #4e8f0e;
-}
-
-.welcome .info {
-  width: 600px;
-  height: 300px;
-  -webkit-box-shadow: 1px 1px 4px black;
-          box-shadow: 1px 1px 4px black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.welcome .info h1,
-.welcome .info h2 {
-  color: white;
-  text-shadow: 1px 1px 3px black;
-}
-
 .welcome-container {
   background: url("/images/welcome-bg.jpg") center;
   background-size: contain;
@@ -372,7 +334,7 @@ h1 {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #7698ef;
-  color: black;
+  color: white;
   text-shadow: none;
   width: auto;
   height: auto;
@@ -381,5 +343,42 @@ h1 {
 
 .btnStart:hover {
   background: transparent;
+}
+
+.animal {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.animal h1 {
+  text-align: center;
+}
+
+.animal p {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.animal button {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: black;
+  text-shadow: 1px 1px 3px white;
+}
+
+.cycleImg {
+  display: block;
+  width: 500px;
+  height: auto;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
