@@ -1,0 +1,14 @@
+eggs: The honey bee metamorphosis begins when the queen lays an egg. The eggs are mighty tiny only about 1.7 millimeters long. 
+	The queen lays a single egg in each cell that has been cleaned and prepared by the workers to raise new brood. 
+	The cell must be spotless, or she moves on to another one. Smaller cells are for female worker bees, and larger cells for male drone bees.
+
+larva: Three days after the queen lays the egg, it hatches into a larva (the plural is larvae). 
+	Healthy larvae are snowy white and resemble small grubs curled up in the cells. Tiny at first, 
+	the larvae grow quickly, shedding their skin five times. These helpless little creatures have voracious appetites, consuming 1,300 meals a day.
+	Within just five days, they are 1,570 times larger than their original size.
+
+pupa: 	The larva is now officially a pupa (the plural is pupae). Here’s where things really begin to happen.The eyes, legs, and wings take shape. 
+	Coloration begins with the eyes: first pink, then purple, then black. Finally, the fine hairs that cover the bee’s body develop.
+
+adult: After 12 days, the now adult bee chews her way through the wax capping to join her sisters and brothers.
+	s
