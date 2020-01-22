@@ -1,5 +1,5 @@
 @import "mixins";
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bangers|Lato&display=swap");
 
 html {
   font-family: "Lato", sans-serif;
@@ -259,33 +259,72 @@ h1 {
 
 .animal {
   width: 850px;
-  height: 600px;
+  height: 100vh;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   h1 {
     text-align: center;
   }
-  p{
+  p {
     text-align: center;
     margin-top: 2rem;
     font-size: 1.2rem;
   }
-  button{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color:black;
-    text-shadow: 1px 1px 3px white;
-  }
 }
 
+.btnNav {
+  color: black;
+  text-shadow: 1px 1px 3px white;
+  margin: 0 3px;
+}
+
+.imgContainer {
+  width: 35vw;
+  height: 45vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cycleImg {
   display: block;
   width: 30vw;
   height: auto;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   margin: 0 auto;
 }
 
+.btnContainer {
+  position: fixed;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+}
+
+figcaption {
+  text-align: center;
+  background-color: rgba(79, 44, 16, 0.6);
+  color: white;
+  width: 30vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.bangersFont {
+  font-family: "Bangers", cursive;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 2.5px;
+}

@@ -346,7 +346,7 @@ h1 {
 }
 
 .animal {
-  width: 600px;
+  width: 850px;
   height: 600px;
   position: absolute;
   left: 50%;
@@ -366,19 +366,45 @@ h1 {
 }
 
 .animal button {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   color: black;
   text-shadow: 1px 1px 3px white;
+  margin: 0 3px;
+}
+
+.imgContainer {
+  width: 35vw;
+  height: 45vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cycleImg {
   display: block;
-  width: 500px;
+  width: 30vw;
   height: auto;
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.btnContainer {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 /*# sourceMappingURL=style.css.map */

@@ -10,7 +10,7 @@ class App extends React.Component {
       bee: bee,
       bat: bat,
       butterfly: butterfly
-    }
+    },
   };
   goTo = (animalName, animals) => {
     this.props.history.push({
@@ -28,6 +28,7 @@ class App extends React.Component {
             uClass="tileFrog"
             goTo={this.goTo}
             animals={animals}
+            nextCycle={this.state.nextCycle}
           />
           <Tile
             name="Ladybug"

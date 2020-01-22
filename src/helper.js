@@ -19,4 +19,5 @@ function randomAdj(arr) {
   return rdmAdj;
 }
 
+
 export { randomAdj, adjectives };
