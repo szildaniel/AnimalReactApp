@@ -28,7 +28,6 @@ class App extends React.Component {
             uClass="tileFrog"
             goTo={this.goTo}
             animals={animals}
-            nextCycle={this.state.nextCycle}
           />
           <Tile
             name="Ladybug"

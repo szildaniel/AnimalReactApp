@@ -3,7 +3,6 @@ const adjectives = [
   "stunning",
   "wonderful",
   "dazzling",
-  "delicious",
   "gorgeous",
   "amazing",
   "fantastic",
