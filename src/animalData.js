@@ -170,7 +170,7 @@ const butterfly = {
       image: "/images/cycles/butterfly/chrysalis.jpg",
       desc: `When the caterpillar is full grown and stops eating, it becomes a pupa. The pupa of butterflies is also called a chrysalis.
       This stage can last from a few weeks, a month or even longer. 
-      Some species have a pupal stage that lasts for two years. It may look like nothing is going on but big changes are happening inside. 
+      It may look like nothing is going on but big changes are happening inside. 
       Special cells that were present in the larva are now growing rapidly. They will become the legs, wings, eyes 
       and other parts of the adult butterfly. Many of the original larva cells will provide energy for these growing adult cells.`
     },

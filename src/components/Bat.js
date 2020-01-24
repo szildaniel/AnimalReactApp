@@ -1,11 +1,16 @@
 import React from 'react';
+import AnimalSlider from './AnimalSlider';
 
-class Bat extends React.Component{
-    render(){
-        return (
-            <h1>IM A Bat</h1>
-        )
+class Bat extends React.Component {
+    state = {
+        name: this.props.location.state.name,
+        data: this.props.location.state.desc
+      };
+      
+      render() {
+        const { name, data } = this.state;
+        return <AnimalSlider name={name} data={data}/>
+      }
     }
-}
-
+    
 export default Bat;

@@ -4,7 +4,7 @@ class Button extends React.Component {
   openLifecycle = () => {
     const animalName = this.props.name;
     const animals = this.props.animals;
-
+    
     this.props.goTo(animalName, animals);
   } 
   render() {

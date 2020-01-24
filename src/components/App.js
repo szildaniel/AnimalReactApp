@@ -12,12 +12,15 @@ class App extends React.Component {
       butterfly: butterfly
     },
   };
-  goTo = (animalName, animals) => {
+
+  goTo = (animalName, animals ) => {
     this.props.history.push({
       pathname: `animal/${animalName}`,
-      state: { ...animals }
+      state: {desc: animals, 
+       name: animalName, }
     });
   };
+  
   render() {
     const { animals } = this.state;
     return (
