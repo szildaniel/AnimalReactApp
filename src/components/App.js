@@ -1,6 +1,10 @@
 import React from "react";
 import Tile from "./Tile";
 import { frog, ladybug, bee, bat, butterfly } from "../animalData";
+import { fadeIn } from "react-animations";
+import styled, { keyframes } from "styled-components";
+
+const FadeIn = styled.div`animation: 2s ${keyframes`${fadeIn}`} 1;`;
 
 class App extends React.Component {
   state = {
@@ -21,10 +25,13 @@ class App extends React.Component {
     });
   };
   
+
+
   render() {
     const { animals } = this.state;
     return (
-      <div className="wrapper">
+      <FadeIn>
+<div className="wrapper">
         <div className="container">
           <Tile
             name="Frog"
@@ -58,6 +65,8 @@ class App extends React.Component {
           />
         </div>
       </div>
+      </FadeIn>
+      
     );
   }
 }

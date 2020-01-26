@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bangers|Lato&display=swap");
 html {
   font-family: "Lato", sans-serif;
 }
@@ -301,7 +301,7 @@ h1 {
   top: 42%;
   left: 44%;
   width: 280px;
-  height: 200px;
+  height: 140px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -309,21 +309,22 @@ h1 {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  padding: 0 10px;
 }
 
 .speech.top-right:before {
-  top: 0;
-  bottom: 200px;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+  top: -50px;
+  -webkit-transform: rotateY(180deg) rotateX(180deg);
+          transform: rotateY(180deg) rotateX(180deg);
+  left: 182px;
 }
 
 .speech.top-right:after {
-  top: 0;
-  bottom: 200px;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+  top: -29px;
+  -webkit-transform: rotateY(180deg) rotateX(180deg);
+          transform: rotateY(180deg) rotateX(180deg);
+  left: 194px;
 }
 
 .btnStart {
@@ -347,12 +348,22 @@ h1 {
 
 .animal {
   width: 850px;
-  height: 600px;
+  height: 100vh;
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .animal h1 {
@@ -365,14 +376,14 @@ h1 {
   font-size: 1.2rem;
 }
 
-.animal button {
+.btnNav {
   color: black;
   text-shadow: 1px 1px 3px white;
   margin: 0 3px;
 }
 
 .imgContainer {
-  width: 35vw;
+  width: 50vw;
   height: 45vh;
   margin: 0 auto;
   display: -webkit-box;
@@ -388,17 +399,20 @@ h1 {
 
 .cycleImg {
   display: block;
-  width: 30vw;
+  width: 40vw;
   height: auto;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   margin: 0 auto;
 }
 
 .btnContainer {
-  position: absolute;
+  width: 100vw;
+  position: fixed;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  bottom: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -406,5 +420,53 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btnContainer :first-child {
+  margin-left: 3.5rem;
+}
+
+.btnContainer :last-child {
+  margin-right: 3.5rem;
+}
+
+figure {
+  margin-top: 0;
+}
+
+figcaption {
+  text-align: center;
+  background-color: rgba(79, 44, 16, 0.6);
+  color: white;
+  width: 40vw;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 7px 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.bangersFont {
+  font-family: "Bangers", cursive;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 2.5px;
+}
+
+@media (max-width: 1400px) {
+  .btnStart {
+    margin-bottom: -10px;
+  }
+  figcaption {
+    max-width: 500px;
+  }
+  .cycleImg {
+    max-width: 500px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
