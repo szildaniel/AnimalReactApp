@@ -1,83 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
+const AnimalSlider = props => {
+  const [isMoreLifeCycle, setIsMoreLifeCycle] = useState(true);
+  const [cycleNumber, setCycleNumber] = useState(0);
+  const [inProp, setInProp] = useState(false);
+ 
+  const nextCycle = () => {
+    const name = props.name.toLowerCase();
+    const lifeCycleArrLength = props.data[name].lifecycle.length;
 
-class AnimalSlider extends React.Component {
-  state = { cycleNumber: 0, isMoreLifecycle: true };
-  nextCycle = () => {
-    const name = this.props.name.toLowerCase();
-    const lifeCycleArrLength = this.props.data[name].lifecycle.length;
-
-    if (this.state.cycleNumber + 1 < lifeCycleArrLength) {
-      this.setState({ cycleNumber: this.state.cycleNumber + 1 });
-    } else {
-      this.setState({
-        cycleNumber: this.state.cycleNumber,
-        isMoreLifecycle: false
-      });
+    if (cycleNumber + 1 < lifeCycleArrLength) {
+      setCycleNumber(cycleNumber + 1);
+      console.log(isMoreLifeCycle, lifeCycleArrLength, cycleNumber);
+    } 
+    else {
+      setCycleNumber(cycleNumber);
+      setIsMoreLifeCycle(!isMoreLifeCycle);
     }
-    if (!this.state.isMoreLifecycle) this.props.history.push("/App");
+   
+    if (!inProp){ setInProp(!inProp)}
+    if (!isMoreLifeCycle) props.history.push("/App");
   };
 
-  prevCycle = () => {
-    this.state.cycleNumber > 0
-      ? this.setState({ cycleNumber: this.state.cycleNumber - 1 })
-      : this.setState({ cycleNumber: this.state.cycleNumber });
-    const name = this.props.name.toLowerCase();
-    const lifeCycleArrLength = this.props.data[name].lifecycle.length;
+  const prevCycle = () => {
+    cycleNumber > 0
+      ? setCycleNumber(cycleNumber - 1)
+      : setCycleNumber(cycleNumber);
+    const name = props.name.toLowerCase();
+    const lifeCycleArrLength = props.data[name].lifecycle.length;
 
-    if (this.state.cycleNumber < lifeCycleArrLength) {
-      this.setState({ isMoreLifecycle: true });
+
+    if (cycleNumber < lifeCycleArrLength && !isMoreLifeCycle) {
+      setIsMoreLifeCycle(!isMoreLifeCycle);
     }
   };
+  
+  const name = props.name.toLowerCase();
+  const index = cycleNumber;
 
-  render() {
-    const name = this.props.name.toLowerCase();
-    const index = this.state.cycleNumber;
+  const animal = props.data[name];
 
-    const animal = this.props.data[name];
+  return (
+    <React.Fragment>
+      <div className="animal">
+        <h1 className="bangersFont"> {name} Life cycle!</h1>
+        <figure>
 
-    return (
-      
-      <React.Fragment>
-        <div className="animal">
-          <h1 className="bangersFont"> {name} Life cycle!</h1>
-          <figure>
-          
 
-            <img
-              src={animal.lifecycle[index].image}
-              className="cycleImg"
-              alt={name}
-            />
-            <figcaption>{animal.lifecycle[index].cycleName}</figcaption>
-          </figure>
+          <TransitionGroup>
+            <CSSTransition
+            in={inProp}
+            timeout={1000}
+            classNames="messageout"
+            >
 
-          <p>{animal.lifecycle[index].desc}</p>
-        </div>
-        <div className="btnContainer">
-          <button
-            onClick={this.prevCycle}
-            className="btnLifeCycle btnNav left"
-            disabled={this.state.cycleNumber === 0}
-          >
-            <FontAwesomeIcon icon="arrow-left" />
-          </button>
-          <button
-            onClick={this.nextCycle}
-            className="btnLifeCycle right btnNav"
-          >
-            {this.state.isMoreLifecycle ? (
-              <FontAwesomeIcon icon="arrow-right" />
-            ) : (
-              "Back to App"
-            )}
-          </button>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+              <img
+                src={animal.lifecycle[index].image}
+                className="cycleImg"
+                alt={name}
+              />
+            </CSSTransition>
+          </TransitionGroup>
+
+
+          <figcaption>{animal.lifecycle[index].cycleName}</figcaption>
+        </figure>
+
+        <p>{animal.lifecycle[index].desc}</p>
+      </div>
+      <div className="btnContainer">
+        <button
+          onClick={prevCycle}
+          className="btnLifeCycle btnNav left"
+          disabled={cycleNumber === 0}
+        >
+          <FontAwesomeIcon icon="arrow-left" />
+        </button>
+        <button onClick={nextCycle} className="btnLifeCycle right btnNav">
+          {isMoreLifeCycle ? (
+            <FontAwesomeIcon icon="arrow-right" />
+          ) : (
+            "Back to App"
+          )}
+        </button>
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default withRouter(AnimalSlider);

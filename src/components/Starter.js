@@ -1,5 +1,4 @@
 import React from "react";
-let added = "";
 
 class Starter extends React.Component {
   state = {

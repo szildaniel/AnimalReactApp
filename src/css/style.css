@@ -288,8 +288,8 @@ h1 {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: 1.1rem;
-  padding: 2px 7px;
+  font-size: 1.2rem;
+  padding: 15px 10px;
   opacity: 1;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
@@ -387,8 +387,8 @@ h1 {
 }
 
 .btnNav.left:active {
-  -webkit-transform: translateX(20px);
-          transform: translateX(20px);
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -400,8 +400,8 @@ h1 {
 }
 
 .btnNav.right:active {
-  -webkit-transform: translateX(20px);
-          transform: translateX(20px);
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -428,6 +428,8 @@ h1 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   margin: 0 auto;
+  -webkit-transition: opacity 300 ease-in-out;
+  transition: opacity 300 ease-in-out;
 }
 
 .btnContainer {
@@ -479,6 +481,38 @@ figcaption {
 .notFound {
   text-align: center;
   margin-top: 5rem;
+}
+
+.messageout {
+  position: absolute;
+  top: 0;
+  left: calc(13% + 5px);
+  right: calc(13% + 5px);
+  opacity: 0.01;
+  -webkit-transform: translateY(0%) scale(0.01);
+          transform: translateY(0%) scale(0.01);
+}
+
+.messageout-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0%) scale(1);
+          transform: translateY(0%) scale(1);
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
+}
+
+.messageout-exit {
+  opacity: 1;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.messageout-exit-active {
+  opacity: 0;
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
 }
 
 @media (max-width: 1400px) {
