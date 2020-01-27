@@ -4,7 +4,14 @@ import { frog, ladybug, bee, bat, butterfly } from "../animalData";
 import { fadeIn } from "react-animations";
 import styled, { keyframes } from "styled-components";
 
-const FadeIn = styled.div`animation: 2s ${keyframes`${fadeIn}`} 1;`;
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faArrowRight, faArrowLeft);
+
+const FadeIn = styled.div`
+  animation: 2s ${keyframes`${fadeIn}`} 1;
+`;
 
 class App extends React.Component {
   state = {
@@ -14,24 +21,20 @@ class App extends React.Component {
       bee: bee,
       bat: bat,
       butterfly: butterfly
-    },
+    }
   };
 
-  goTo = (animalName, animals ) => {
+  goTo = (animalName, animals) => {
     this.props.history.push({
       pathname: `animal/${animalName}`,
-      state: {desc: animals, 
-       name: animalName, }
+      state: { desc: animals, name: animalName }
     });
   };
-  
-
 
   render() {
     const { animals } = this.state;
     return (
       <FadeIn>
-<div className="wrapper">
         <div className="container">
           <Tile
             name="Frog"
@@ -64,9 +67,7 @@ class App extends React.Component {
             animals={animals}
           />
         </div>
-      </div>
       </FadeIn>
-      
     );
   }
 }

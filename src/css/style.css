@@ -11,34 +11,12 @@ html {
 }
 
 body {
-  background: lightgrey;
+  background: #cacaca;
   margin: 0;
 }
 
 h1 {
   color: black;
-}
-
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.wrapper.gray {
-  -webkit-filter: grayscale(0.8) blur(4px);
-          filter: grayscale(0.8) blur(4px);
-  z-index: 9;
 }
 
 .container {
@@ -206,8 +184,9 @@ h1 {
 }
 
 .btnLifeCycle, .btnStart {
-  width: 165px;
-  height: 35px;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
   color: white;
   border: none;
   border-radius: 20px;
@@ -240,7 +219,7 @@ h1 {
 
 .welcome-container {
   background: url("/images/welcome-bg.jpg") center;
-  background-size: contain;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
 }
@@ -310,7 +289,14 @@ h1 {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   font-size: 1.1rem;
-  padding: 0 10px;
+  padding: 2px 7px;
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.speech.top-right.active {
+  opacity: 0;
 }
 
 .speech.top-right:before {
@@ -347,7 +333,7 @@ h1 {
 }
 
 .animal {
-  width: 850px;
+  width: 900px;
   height: 100vh;
   position: absolute;
   left: 50%;
@@ -380,6 +366,44 @@ h1 {
   color: black;
   text-shadow: 1px 1px 3px white;
   margin: 0 3px;
+}
+
+.btnNav[disabled] {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #c7c5c5;
+  opacity: 0.3;
+}
+
+.btnNav[disabled]:hover {
+  background: #c7c5c5;
+  cursor: auto;
+}
+
+.btnNav.left {
+  margin-left: 10rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.btnNav.left:active {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.btnNav.right {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-right: 10rem;
+}
+
+.btnNav.right:active {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .imgContainer {
@@ -425,14 +449,6 @@ h1 {
           justify-content: space-between;
 }
 
-.btnContainer :first-child {
-  margin-left: 3.5rem;
-}
-
-.btnContainer :last-child {
-  margin-right: 3.5rem;
-}
-
 figure {
   margin-top: 0;
 }
@@ -449,6 +465,8 @@ figcaption {
   padding: 7px 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .bangersFont {
@@ -456,6 +474,11 @@ figcaption {
   color: white;
   text-shadow: 2px 2px 2px black;
   letter-spacing: 2.5px;
+}
+
+.notFound {
+  text-align: center;
+  margin-top: 5rem;
 }
 
 @media (max-width: 1400px) {

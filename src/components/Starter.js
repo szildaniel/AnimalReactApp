@@ -1,27 +1,24 @@
 import React from "react";
+let added = "";
 
 class Starter extends React.Component {
   state = {
     showBubble: false,
-    cursorActive: false,
+    cursorActive: false
   };
 
   startApp = () => {
     this.props.history.push(`/App`);
   };
 
-  cursorAnimation = () => {
-    const cursorActive = this.state.cursorActive;
-    this.setState({cursorActive: !cursorActive})
-  }
- 
   componentDidMount() {
-    const bubbleDelay = setTimeout(() => {
+    this.bubbleDelay = setTimeout(() => {
       const showBubble = this.state.showBubble;
       this.setState({ showBubble: !showBubble });
-    }, 1000);
-
-    const cursorInterval = setInterval(this.cursorAnimation, 400);
+    }, 1200);
+  }
+  componentWillUnmount() {
+    window.clearTimeout(this.bubbleDelay);
   }
 
   render() {
@@ -35,15 +32,8 @@ class Starter extends React.Component {
               : "speech top-right active"
           }
         >
-          <span>
-            Want to see curious life cycle of different animals? Click Start App
-            and see how beatiful nature made us!{" "}
-            <span className={
-              this.state.cursorActive
-              ? "cursor active"
-              : "cursor"
-            }>{` |`}</span>
-          </span>
+          Have you ever wonder how larva is transform to a beautiful butterfly. Maybe you want to know how bat babies looks like ?
+          Click Start App choose animal and discover fascinating facts about them.
         </p>
         <button onClick={this.startApp} className="btnStart">
           Start App

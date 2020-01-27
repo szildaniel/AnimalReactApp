@@ -7,7 +7,7 @@ import Bee from "./Bee";
 import Bat from "./Bat";
 import Butterfly from "./Butterfly";
 import Starter from "./Starter";
-
+import NotFound from "./NotFound";
 
 const Router = () => (
   <BrowserRouter>
@@ -19,6 +19,7 @@ const Router = () => (
       <Route path="/animal/Bee" component={Bee} />
       <Route path="/animal/Bat" component={Bat}  />
       <Route path="/animal/Butterfly" component={Butterfly} />
+      <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
 );

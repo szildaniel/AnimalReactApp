@@ -3,9 +3,7 @@
 
 html {
   font-family: "Lato", sans-serif;
-  // box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -13,21 +11,12 @@ html {
 }
 
 body {
-  background: lightgrey;
+  background: $light-gray;
   margin: 0;
 }
 
 h1 {
   color: black;
-}
-
-.wrapper {
-  @include center;
-  flex-direction: column;
-  &.gray {
-    filter: grayscale(0.8) blur(4px);
-    z-index: 9;
-  }
 }
 
 .container {
@@ -143,8 +132,9 @@ h1 {
 }
 
 .btnLifeCycle {
-  width: 165px;
-  height: 35px;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
   color: white;
   border: none;
   border-radius: 20px;
@@ -171,7 +161,7 @@ h1 {
 
 .welcome-container {
   background: url("/images/welcome-bg.jpg") center;
-  background-size: contain;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
 }
@@ -223,18 +213,18 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     font-size: 1.1rem;
-    padding: 0 10px;
+    padding: 2px 7px;
     opacity: 1;
     transition: all 1s ease-in-out;
-    &.active{
+    &.active {
       opacity: 0;
-    }  
+    }
     &:before {
       top: -50px;
       transform: rotateY(180deg) rotateX(180deg);
       left: 182px;
     }
-    
+
     &:after {
       top: -29px;
       transform: rotateY(180deg) rotateX(180deg);
@@ -262,7 +252,7 @@ h1 {
 }
 
 .animal {
-  width: 850px;
+  width: 900px;
   height: 100vh;
   position: absolute;
   left: 50%;
@@ -285,6 +275,31 @@ h1 {
   color: black;
   text-shadow: 1px 1px 3px white;
   margin: 0 3px;
+  &[disabled] {
+    transition: 0.5s;
+    color: #c7c5c5;
+    opacity: 0.3;
+    &:hover{
+      background: #c7c5c5;
+      cursor: auto;
+    }
+  }
+  &.left {
+    margin-left: 10rem;
+    transition: 0.2s;
+    &:active {
+      transform: translateX(20px);
+      transition: 0.2s;
+    }
+  }
+  &.right {
+    transition: 0.2s;
+    margin-right: 10rem;
+    &:active {
+      transform: translateX(20px);
+      transition: 0.2s;
+    }
+  }
 }
 
 .imgContainer {
@@ -305,7 +320,7 @@ h1 {
 }
 
 .btnContainer {
-  width:100vw;
+  width: 100vw;
   position: fixed;
   left: 50%;
   bottom: 50%;
@@ -313,15 +328,9 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  :first-child{
-    margin-left:3.5rem;
-  }
-  :last-child{
-    margin-right: 3.5rem;
-  }
 }
-figure{
-  margin-top:0;
+figure {
+  margin-top: 0;
 }
 figcaption {
   text-align: center;
@@ -334,6 +343,8 @@ figcaption {
   padding: 7px 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .bangersFont {
@@ -343,26 +354,19 @@ figcaption {
   letter-spacing: 2.5px;
 }
 
-.cursor{
-  color: black;
-  opacity: 0;
-  transition: opacity .2s ease-in-out;
-
-  &.active{
-    opacity: 1;
-    transition: opacity .2s ease-in-out;
-
-  }
+.notFound{
+  text-align: center;
+  margin-top: 5rem;
 }
 
-@media (max-width: 1400px){
-  .btnStart{
+@media (max-width: 1400px) {
+  .btnStart {
     margin-bottom: -10px;
   }
-  figcaption{
+  figcaption {
     max-width: 500px;
   }
-  .cycleImg{
+  .cycleImg {
     max-width: 500px;
   }
 }

@@ -11,7 +11,6 @@ class Tile extends React.Component {
   toggleActive = () => {
     const currentState = this.state.isActive;
     this.setState({ isActive: !currentState });
-    // console.log(currentState);
   };
 
   toggleOpenActive = event => {
@@ -38,7 +37,7 @@ class Tile extends React.Component {
         <p> {randomAdj(adjectives)} </p>
         <p>{this.props.name}</p>
         <p>
-          <Button name={this.props.name} goTo={this.props.goTo} animals={this.props.animals} nextCycle={this.props.nextCycle} />
+          <Button name={this.props.name} goTo={this.props.goTo} animals={this.props.animals} />
         </p>
       </div>
     );
