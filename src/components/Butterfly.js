@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimalSlider from './AnimalSlider';
+import { Zoom } from './App';
 
 class Butterfly extends React.Component {
     state = {
@@ -9,7 +10,7 @@ class Butterfly extends React.Component {
       
       render() {
         const { name, data } = this.state;
-        return <AnimalSlider name={name} data={data} />
+        return  <Zoom><AnimalSlider name={name} data={data} /></Zoom>
       }
     }
     
