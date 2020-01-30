@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers|Lato&display=swap");
 html {
   font-family: "Lato", sans-serif;
+  overflow: hidden;
 }
 
 *,
@@ -479,13 +480,19 @@ figcaption {
 }
 
 .animal-enter {
-  opacity: 0;
+  position: absolute;
+  top: 0;
+  opacity: 0.01;
+  -webkit-transform: translateY(0%) scale(0.01);
+          transform: translateY(0%) scale(0.01);
 }
 
 .animal-enter-active {
   opacity: 1;
-  -webkit-transition: opacity 1000ms;
-  transition: opacity 1000ms;
+  -webkit-transform: translateY(0%) scale(1);
+          transform: translateY(0%) scale(1);
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
 }
 
 .animal-exit {
@@ -496,8 +503,14 @@ figcaption {
 
 .animal-exit-active {
   opacity: 0;
-  -webkit-transition: opacity 1000ms;
-  transition: opacity 1000ms;
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
+}
+
+.animal-exit-done {
+  opacity: 0;
 }
 
 @media (max-width: 1400px) {

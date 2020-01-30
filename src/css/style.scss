@@ -3,6 +3,7 @@
 
 html {
   font-family: "Lato", sans-serif;
+  overflow: hidden;
 }
 *,
 *:before,
@@ -261,6 +262,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   h1 {
     text-align: center;
   }
@@ -318,7 +320,6 @@ h1 {
   border-top-right-radius: 5px;
   margin: 0 auto;
   transition: opacity 300 ease-in-out;
-  // opacity: 0;
 }
 
 .btnContainer {
@@ -362,12 +363,16 @@ figcaption {
 }
 
 .animal-enter{
-  opacity: 0;
+  position: absolute;
+  top: 0;
+  opacity: 0.01;
+  transform: translateY(0%) scale(0.01);
 }
 
 .animal-enter-active {
   opacity: 1;
-  transition: opacity 1000ms;
+  transform: translateY(0%) scale(1);
+  transition: all 1000ms ease-in-out;
 }
 
 .animal-exit {
@@ -377,8 +382,10 @@ figcaption {
 
 .animal-exit-active {
   opacity: 0;
-  transition: opacity 1000ms;
+  transform: scale(4);
+  transition: all 1000ms ease-in-out;
 }
+
 
 @media (max-width: 1400px) {
   .btnStart {
