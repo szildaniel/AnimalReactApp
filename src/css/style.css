@@ -509,10 +509,6 @@ figcaption {
   transition: all 1000ms ease-in-out;
 }
 
-.animal-exit-done {
-  opacity: 0;
-}
-
 @media (max-width: 1400px) {
   .btnStart {
     margin-bottom: -10px;
