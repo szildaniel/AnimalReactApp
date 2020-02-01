@@ -31,7 +31,7 @@ class Starter extends React.Component {
               : "speech top-right active"
           }
         >
-          Have you ever wonder how larva is transform to a beautiful butterfly. Maybe you want to know how bat babies looks like ?
+          Have you ever wonder how larva transform to beautiful butterfly ?
           Click Start App choose animal and discover fascinating facts about them.
         </p>
         <button onClick={this.startApp} className="btnStart">

@@ -356,6 +356,11 @@ h1 {
   text-align: center;
   margin-top: 2rem;
   font-size: 1.2rem;
+  border: 1px solid rgba(79, 44, 16, 0.6);
+  padding: 1rem .5rem;
+  -webkit-box-shadow: 2px -2px 4px gray;
+          box-shadow: 2px -2px 4px gray;
+  background: white;
 }
 
 .btnNav {
