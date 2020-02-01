@@ -12,7 +12,7 @@ import NotFound from "./NotFound";
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Starter} />
+      <Route exact path="/AnimalReactApp" component={Starter} />
       <Route exact path="/App" component={App} />
       <Route path="/animal/Frog" component={Frog} />
       <Route path="/animal/Ladybug" component={Ladybug} />
