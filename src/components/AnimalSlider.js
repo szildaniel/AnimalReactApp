@@ -54,7 +54,7 @@ const AnimalSlider = props => {
           <div className="animal">
             <h1 className="bangersFont"> {name} Life cycle!</h1>
             <figure>
-              <img src={image} className="cycleImg" alt={name}/>
+              <img src={process.env.PUBLIC_URL+image} className="cycleImg" alt={name}/>
               <figcaption>{cycleName}</figcaption>
             </figure>
 
