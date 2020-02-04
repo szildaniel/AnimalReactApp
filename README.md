@@ -1,5 +1,5 @@
 # Animal React App
-Link - https://szildaniel.github.io/AnimalReactApp
+Link - http://salty-springs-13784.herokuapp.com/
 ### Project is made only for learning purpose.
 
 That is a bit educational project, you can find out how a 5 diffrent Animals life cycle looks like.
